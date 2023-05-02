@@ -27,12 +27,12 @@ module.exports = {
     async addThought(req, res){
         try{
             const thought = await Thought.create(req.body);
-            const user = User.findOneAndUpdate(
-                { _id: req.body.userId },
+            const user = await User.findOneAndUpdate(
+                { username: req.body.username },
                 { $addToSet: {thoughts: thought._id}},
                 { new: true },
             );
-            res.json(thought);
+            res.json(user);
         }catch(err){
             res.status(500).json(err);
         }
