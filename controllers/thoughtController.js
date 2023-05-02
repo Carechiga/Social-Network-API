@@ -26,7 +26,7 @@ module.exports = {
     //add a thought
     async addThought(req, res){
         try{
-            const thought = await Thought.create({thoughtText: req.body.thoughtText, username: req.body.userId});
+            const thought = await Thought.create({thoughtText: req.body.thoughtText});
             res.json(thought);
         }catch(err){
             res.status(500).json(err);
