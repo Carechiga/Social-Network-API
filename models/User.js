@@ -1,4 +1,4 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
 
 const userSchema = new Schema(
     {
@@ -12,11 +12,11 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            validate: { 
-                validator: function(v) {
-                    return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(v);
-                },
-            },
+            // validate: { 
+            //     validator: function(v) {
+            //         return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(v);
+            //     },
+            // },
         },
         thoughts: [
             {

@@ -8,7 +8,6 @@ const {
     addFriend,
     removeFriend
 } = require('../../controllers/userController');
-const { route } = require('./thoughtRoutes');
 
 router.route('/')
 .get(getUsers)
@@ -16,10 +15,10 @@ router.route('/')
 
 router.route('/:id')
 .get(getSingleUser)
-.put(updateUser);
+.put(updateUser)
 .delete(deleteUser);
 
-route.route('./:id/friends/:friendId')
+router.route('./:id/friends/:friendId')
 .post(addFriend)
 .delete(removeFriend);
 
