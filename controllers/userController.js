@@ -75,12 +75,7 @@ module.exports = {
            if (!user) {
             return res.status(404).json({ message: 'No user found with that ID' });
           }
-           const userObj = {
-            user,
-            friendCount: await friendCount(),
-           }
-        
-           res.json(userObj);
+              res.json(user);
         }catch (err) {
             res.status(500).json(err);
         }
@@ -88,16 +83,15 @@ module.exports = {
     //remove friend from friend list
     async removeFriend(req, res){
         try{
-            const user = User.findOneAndUpdate({ _id: req.params.id}, { $pull: { friends: req.params.friendId} });
+            const user = await User.findOneAndUpdate(
+                { _id: req.params.id }, 
+                { $pull: { friends: req.params.friendId }},
+                { runValidators: true, new: true });
             if (!user) {
                 return res.status(404).json({ message: 'No user found with that ID' });
               }
-              const userObj = {
-                user,
-                friendCount: await friendCount(),
-               }
-            
-               res.json(userObj);
+                 
+               res.json(user);
         }catch (err) {
             res.status(500).json(err);
         }
