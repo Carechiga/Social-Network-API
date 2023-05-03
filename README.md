@@ -22,7 +22,9 @@ In order to run this application the user will need to install both mongoose and
 
 ## Usage
 
-In order to use this application you will need to start the application from your terminal and use Insomnia to test the routes. a video link is provided to demonstrate,
+In order to use this application you will need to start the application from your terminal and use Insomnia to test the routes. a video link is provided to demonstrate.
+
+https://www.youtube.com/watch?v=F25NKaXeTxs
 
 ## Credits
 
