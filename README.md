@@ -5,6 +5,10 @@
 This application was built to help build my skills in MongooseDB and refine my understanding of noSQL databases
 The project simulates the backend of a social netowrk application where users can be created with  unique usernames , the users can make posts called thoughts and can react to other users thoughts and even add and remove other users from their friend list.
 
+![Alt text](assets/images/Screenshot1.png "Get Users")
+![Alt text](assets/images/Screenshot2.png "POst Thoughts")
+![Alt text](assets/images/Screenshot3.png "Delete Reaction")
+
 
 
 ## Table of Contents
